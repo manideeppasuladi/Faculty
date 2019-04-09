@@ -21,7 +21,13 @@ class Faculty_education extends CI_Controller{
         $data['_view'] = 'faculty_education/index';
         $this->load->view('layouts/main',$data);
     }
-
+    function faculty_view()
+    {
+        $data['faculty_education'] = $this->Faculty_education_model->get_info_by_id($this->session->userdata('password'));
+        $data['heading'] = 'Faculty Education';
+       $data['_view'] = 'faculty_education/index';
+        $this->load->view('layouts/main',$data);
+    }
     /*
      * Adding a new faculty_education
      */

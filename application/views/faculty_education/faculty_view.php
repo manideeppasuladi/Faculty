@@ -13,7 +13,7 @@
 		<th>Masters</th>
 		<th>Masters Year Of Study</th>
 		<th>PHD</th>
-		<th>Actions</th>
+		
     </tr>
 	<?php foreach($faculty_education as $f){ ?>
     <tr>
@@ -28,10 +28,7 @@
 		<td><?php echo $f['masters']; ?></td>
 		<td><?php echo $f['masters_year_of_study']; ?></td>
 		<td><?php echo $f['PHD']; ?></td>
-		<td>
-            <a href="<?php echo site_url('faculty_education/edit/'.$f['id']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('faculty_education/remove/'.$f['id']); ?>" class="btn btn-danger btn-xs">Delete</a>
-        </td>
+	
     </tr>
 	<?php } ?>
 </table>

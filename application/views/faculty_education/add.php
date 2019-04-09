@@ -2,33 +2,19 @@
 
 	<div class="form-group">
 		<label for="emp_id" class="col-md-4 control-label">Personal Info</label>
-		
-		<?php
-			if(isset($_SESSION['empId']))
-			{
-		?>
-			<div class="col-md-8">
-				<input  class="form-control" name="emp_id" type="text" value="<?php echo $_SESSION['empId']?>" readonly="readonly"	/>
-			</div>
-		<?php
-			} else {
-		?>
-				<div class="col-md-8">
-					<select name="emp_id" class="form-control">
-						<option value="">select personal_info</option>
-						<?php 
-						foreach($all_personal_info as $personal_info)
-						{
-							$selected = ($personal_info['id'] == $this->input->post('emp_id')) ? ' selected="selected"' : "";
+		<div class="col-md-8">
+			<select name="emp_id" class="form-control">
+				<option value="">select personal_info</option>
+				<?php 
+				foreach($all_personal_info as $personal_info)
+				{
+					$selected = ($personal_info['id'] == $this->input->post('emp_id')) ? ' selected="selected"' : "";
 
-							echo '<option value="'.$personal_info['id'].'" '.$selected.'>'.$personal_info['emp_id'].'</option>';
-						} 
-						?>
-					</select>
-				</div>
-		<?php
-			}
-		?>
+					echo '<option value="'.$personal_info['id'].'" '.$selected.'>'.$personal_info['emp_id'].'</option>';
+				} 
+				?>
+			</select>
+		</div>
 	</div>
 	<div class="form-group">
 		<label for="Tenth" class="col-md-4 control-label">Tenth</label>

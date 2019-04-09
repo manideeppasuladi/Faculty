@@ -21,7 +21,13 @@ class Faculty_experience extends CI_Controller{
         $data['_view'] = 'faculty_experience/index';
         $this->load->view('layouts/main',$data);
     }
-
+    function faculty_view()
+    {
+        $data['faculty_experience'] = $this->Faculty_experience_model->get_info_by_id($this->session->userdata('password'));
+        $data['heading'] = 'Faculty Experience';
+        $data['_view'] = 'faculty_experience/index';
+        $this->load->view('layouts/main',$data);
+    }
     /*
      * Adding a new faculty_experience
      */

@@ -21,7 +21,13 @@ class Faculty_subject extends CI_Controller{
         $data['_view'] = 'faculty_subject/index';
         $this->load->view('layouts/main',$data);
     }
-
+    function faculty_view()
+    {
+        $data['faculty_subject'] = $this->Faculty_subject_model->get_info_by_id($this->session->userdata('password'));
+        $data['heading'] = 'Faculty Subject';
+        $data['_view'] = 'faculty_subject/index';
+        $this->load->view('layouts/main',$data);
+    }
     /*
      * Adding a new faculty_subject
      */

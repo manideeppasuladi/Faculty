@@ -21,18 +21,19 @@ class Personal_info extends CI_Controller{
         $data['_view'] = 'personal_info/index';
         $this->load->view('layouts/main',$data);
     }
-
+    function faculty_view()
+    {
+        $data['personal_info'] = $this->Personal_info_model->get_info_by_id( $this->session->userdata('password'));
+       
+      //  $data['_view'] = 'personal_info/index';
+      //  $this->load->view('layouts/main',$data);
+    }
     /*
      * Adding a new personal_info
      */
     function add()
     {   
         
-        if(isset($_POST['add_Employee'])){
-            $_SESSION['start-adding'] = TRUE ;
-            redirect('personal_info/add');
-        }
-
 
         if(isset($_POST) && count($_POST) > 0)     
         {   
@@ -52,7 +53,6 @@ class Personal_info extends CI_Controller{
             //redirect('personal_info/index');
             if(isset($_SESSION['start-adding']))
             {
-                $_SESSION['empId']=$this->input->post('emp_id');
                 $this->session->set_flashdata('success','Data Stored. Go to next page');
                 redirect('personal_info/add');
             }

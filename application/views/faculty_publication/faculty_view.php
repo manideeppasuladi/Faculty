@@ -9,7 +9,7 @@
 		<th>Page</th>
 		<th>International Name</th>
 		<th>Index Name</th>
-		<th>Actions</th>
+		
     </tr>
 	<?php foreach($faculty_publications as $f){ ?>
     <tr>
@@ -20,10 +20,7 @@
 		<td><?php echo $f['page']; ?></td>
 		<td><?php echo $f['international_name']; ?></td>
 		<td><?php echo $f['index_name']; ?></td>
-		<td>
-            <a href="<?php echo site_url('faculty_publication/edit/'.$f['id']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('faculty_publication/remove/'.$f['id']); ?>" class="btn btn-danger btn-xs">Delete</a>
-        </td>
+		
     </tr>
 	<?php } ?>
 </table>

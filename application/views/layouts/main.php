@@ -15,13 +15,9 @@
 	  <header>
 			<nav class="navbar navbar-expand navbar-light bg-dark navbar-dark">
 				<div class="nav navbar-nav mx-auto">
-				
+				<a href="<?php echo site_url('dashboard/index2'); ?>" class="btn btn-success">HOME</a> 
 					<a class="nav-item nav-link active btn btn-outline" role="button" href="<?php echo site_url('Dashboard/'); ?>">Dashboard <span class="sr-only">(current)</span></a>
-				
-				</div>
-				<div class="nav navbar-nav mr-auto">
-				
-				<a href="<?php echo site_url('user/user_logout'); ?>" class="btn btn-success float-right">LogOut</a> 
+					<a href="<?php echo site_url('user/user_logout'); ?>" class="btn btn-success">LogOut</a> 
 				</div>
 			</nav>
 	  </header>
@@ -33,12 +29,46 @@
                                     <?php
                                 } ?>
 		<h3><?php	if(isset($heading))	echo $heading ?></h3>
-		<div class="col col-lg-2">
-                
-             </div>    
+		<div class="col col-lg-2"> </div>    
 		<?php	if(isset($_view) && $_view)
 			$this->load->view($_view);
-		?></div>
+		?>
+		<h3><?php	if(isset($heading1))	echo $heading1 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view1) && $_view1)
+			$this->load->view($_view1);
+		?>
+		<h3><?php	if(isset($heading2))	echo $heading2 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view2) && $_view2)
+			$this->load->view($_view2);
+		?>
+		<h3><?php	if(isset($heading3))	echo $heading3 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view3) && $_view3)
+			$this->load->view($_view3);
+		?>
+		<h3><?php	if(isset($heading4))	echo $heading4 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view4) && $_view4)
+			$this->load->view($_view4);
+		?>
+		<h3><?php	if(isset($heading5))	echo $heading5 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view5) && $_view5)
+			$this->load->view($_view5);
+		?>
+		<h3><?php	if(isset($heading6))	echo $heading6 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view6) && $_view6)
+			$this->load->view($_view6);
+		?>
+		<h3><?php	if(isset($heading7))	echo $heading7 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view7) && $_view7)
+			$this->load->view($_view7);
+		?>
+		</div>
 	</main>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

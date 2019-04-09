@@ -1,6 +1,4 @@
-<div class="pull-right">
-	<a href="<?php echo site_url('faculty_experience/add'); ?>" class="btn btn-success">Add</a> 
-</div>
+
 
 <table class="table table-striped table-bordered">
     <tr>

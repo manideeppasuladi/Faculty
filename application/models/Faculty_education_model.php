@@ -18,7 +18,12 @@ class Faculty_education_model extends CI_Model
     {
         return $this->db->get_where('faculty_education',array('id'=>$id))->row_array();
     }
-        
+    function get_info_by_id($emp_id)
+    {
+        $this->db->order_by('id', 'desc');
+        $this->db->where('emp_id',$emp_id);
+        return $this->db->get('faculty_education')->result_array();
+    }  
     /*
      * Get all faculty_education
      */

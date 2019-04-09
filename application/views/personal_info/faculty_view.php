@@ -12,7 +12,7 @@
 		<th>PAN</th>
 		<th>Aadhaar</th>
 		<th>JNTU No</th>
-		<th>Actions</th>
+	
     </tr>
 	<?php foreach($personal_info as $p){ ?>
     <tr>
@@ -26,10 +26,7 @@
 		<td><?php echo $p['PAN']; ?></td>
 		<td><?php echo $p['aadhaar']; ?></td>
 		<td><?php echo $p['JNTU_no']; ?></td>
-		<td>
-            <a href="<?php echo site_url('personal_info/edit/'.$p['id']); ?>" class="btn btn-info btn-xs">Edit</a> 
-            <a href="<?php echo site_url('personal_info/remove/'.$p['id']); ?>" class="btn btn-danger btn-xs">Delete</a>
-        </td>
+		
     </tr>
 	<?php } ?>
 </table>
