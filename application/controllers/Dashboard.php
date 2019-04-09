@@ -8,7 +8,12 @@ class Dashboard extends CI_Controller{
     function __construct()
     {
         parent::__construct();
-        
+        $this->load->model('Personal_info_model');
+        $this->load->model('Faculty_subject_model');
+        $this->load->model('Faculty_publication_model');
+        $this->load->model('Faculty_phd_model');
+        $this->load->model('Faculty_experience_model');
+        $this->load->model('Faculty_education_model');
     }
 
     function index2()
@@ -27,9 +32,29 @@ class Dashboard extends CI_Controller{
             $this->load->view('layouts/main',$data);
         }else
         {
-            
+            $emp_id=$_SESSION['emp_id'];
+            $data['personal_info'] = $this->Personal_info_model->get_info_by_id($emp_id);
+            $data['faculty_subject'] = $this->Faculty_subject_model->get_info_by_id($emp_id);
+            $data['faculty_publications'] = $this->Faculty_publication_model->get_info_by_id($emp_id);
+            $data['faculty_phd'] = $this->Faculty_phd_model->get_info_by_id($emp_id);
+            $data['faculty_experience'] = $this->Faculty_experience_model->get_info_by_id($emp_id);
+            $data['faculty_education'] = $this->Faculty_education_model->get_info_by_id($emp_id);
             $data['_view'] = 'dashboard_Faculty';
+            $data['_view1'] = 'personal_info/faculty_view';
+            $data['_view2'] = 'faculty_subject/faculty_view';
+            $data['_view3'] = 'faculty_publication/faculty_view';
+            $data['_view4'] = 'faculty_phd/faculty_view';
+            $data['_view5'] = 'faculty_experience/faculty_view';
+            $data['_view6'] = 'faculty_education/faculty_view';
+            
             $data['heading'] = 'Faculty DashBaord';
+            $data['heading1'] = 'personal_info';
+            $data['heading2'] = 'faculty_subject';
+            $data['heading3'] = 'faculty_publications';
+            $data['heading4'] = 'faculty_phd';
+            $data['heading5'] = 'faculty_experience';
+            $data['heading6'] = 'faculty_education';
+           
             $this->load->view('layouts/main',$data);
             
         }

@@ -23,7 +23,13 @@ class Faculty_phd extends CI_Controller{
         $data['_view'] = 'faculty_phd/index';
         $this->load->view('layouts/main',$data);
     }
-
+    function faculty_view()
+    {
+        $data['faculty_phd'] = $this->Faculty_phd_model->get_info_by_id($this->session->userdata('password'));
+        $data['heading'] = 'Faculty Phd';
+        $data['_view'] = 'faculty_phd/index';
+        $this->load->view('layouts/main',$data);
+    }
     /*
      * Adding a new faculty_phd
      */

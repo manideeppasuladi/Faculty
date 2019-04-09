@@ -29,12 +29,46 @@
                                     <?php
                                 } ?>
 		<h3><?php	if(isset($heading))	echo $heading ?></h3>
-		<div class="col col-lg-2">
-                
-             </div>    
+		<div class="col col-lg-2"> </div>    
 		<?php	if(isset($_view) && $_view)
 			$this->load->view($_view);
-		?></div>
+		?>
+		<h3><?php	if(isset($heading1))	echo $heading1 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view1) && $_view1)
+			$this->load->view($_view1);
+		?>
+		<h3><?php	if(isset($heading2))	echo $heading2 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view2) && $_view2)
+			$this->load->view($_view2);
+		?>
+		<h3><?php	if(isset($heading3))	echo $heading3 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view3) && $_view3)
+			$this->load->view($_view3);
+		?>
+		<h3><?php	if(isset($heading4))	echo $heading4 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view4) && $_view4)
+			$this->load->view($_view4);
+		?>
+		<h3><?php	if(isset($heading5))	echo $heading5 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view5) && $_view5)
+			$this->load->view($_view5);
+		?>
+		<h3><?php	if(isset($heading6))	echo $heading6 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view6) && $_view6)
+			$this->load->view($_view6);
+		?>
+		<h3><?php	if(isset($heading7))	echo $heading7 ?></h3>
+		<div class="col col-lg-2"> </div>    
+		<?php	if(isset($_view7) && $_view7)
+			$this->load->view($_view7);
+		?>
+		</div>
 	</main>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

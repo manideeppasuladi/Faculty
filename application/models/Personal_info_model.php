@@ -18,7 +18,12 @@ class Personal_info_model extends CI_Model
     {
         return $this->db->get_where('personal_info',array('id'=>$id))->row_array();
     }
-        
+    function get_info_by_id($emp_id)
+    {
+        $this->db->order_by('id', 'desc');
+        $this->db->where('emp_id',$emp_id);
+        return $this->db->get('personal_info')->result_array();
+    }   
     /*
      * Get all personal_info
      */
@@ -27,7 +32,13 @@ class Personal_info_model extends CI_Model
         $this->db->order_by('id', 'desc');
         return $this->db->get('personal_info')->result_array();
     }
-        
+    function get_personal_info_by_dept($dept)
+    {
+        $this->db->order_by('id', 'desc');
+        $this->db->where('DEPT',$dept);
+        return $this->db->get('personal_info')->result_array();
+    }
+      
     /*
      * function to add new personal_info
      */
