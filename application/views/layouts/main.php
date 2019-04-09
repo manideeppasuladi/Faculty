@@ -15,9 +15,13 @@
 	  <header>
 			<nav class="navbar navbar-expand navbar-light bg-dark navbar-dark">
 				<div class="nav navbar-nav mx-auto">
-				<a href="<?php echo site_url('dashboard/index2'); ?>" class="btn btn-success">HOME</a> 
+				
 					<a class="nav-item nav-link active btn btn-outline" role="button" href="<?php echo site_url('Dashboard/'); ?>">Dashboard <span class="sr-only">(current)</span></a>
-					<a href="<?php echo site_url('user/user_logout'); ?>" class="btn btn-success">LogOut</a> 
+				
+				</div>
+				<div class="nav navbar-nav mr-auto">
+				
+				<a href="<?php echo site_url('user/user_logout'); ?>" class="btn btn-success float-right">LogOut</a> 
 				</div>
 			</nav>
 	  </header>

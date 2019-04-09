@@ -36,6 +36,11 @@ class Dashboard extends CI_Controller{
     }
     function index()
     {
+        
+    if(isset($_SESSION['user-logged']))
+    {
+        redirect('dashboard/index2');
+    }
         $data['_view'] = 'Login';
         
         $this->load->view('login',$data);
@@ -44,6 +49,13 @@ class Dashboard extends CI_Controller{
         //unset($_SESSION);
         
         $this->session->sess_destroy();
+        $data['_view'] = 'dashboard';
+        $data['heading'] = 'Editing Dashboard';
+        $this->load->view('layouts/main',$data);
+    }
+    public function destroy()
+    {
+        $this->session->unset_userdata('start-adding');
         $data['_view'] = 'dashboard';
         $data['heading'] = 'Editing Dashboard';
         $this->load->view('layouts/main',$data);

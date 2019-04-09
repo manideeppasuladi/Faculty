@@ -58,13 +58,29 @@
 	
 	<div class="row justify-content-center">
              <div class="col col-lg-6 ">
-                <h2>Add Complete Details of an employee</h2>
+                <h3>Add Complete Details of an employee</h3>
 			 </div>
 			 <div class="col col-lg-1">&rarr;</div>
             <div class="col col-lg-2">
-                <a href="<?php echo site_url('Personal_info/add'); 
-                  $_SESSION['start-adding'] = TRUE ;
-               ?>" name='add_Employee' class="btn btn-success" >Add</a> 
+                
+               <form action="<?php echo site_url('Personal_info/add'); ?>" method="POST">
+               <button class="btn btn-success" name="add_Employee" >Add new</button>
+               </form>
+               
                
              </div>     
-	</div> 
+             
+   </div> 
+<hr>
+<div class="row justify-content-center">
+             <div class="col col-lg-6 ">
+                <h3>View List Employees</h3>
+			 </div>
+			 <div class="col col-lg-1">&rarr;</div>
+            <div class="col col-lg-2">
+                
+            <a href="<?php echo site_url('employees/all_Employees'); ?>" class="btn btn-success">View</a> 
+               
+             </div>     
+             
+   </div> 
