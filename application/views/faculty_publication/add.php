@@ -19,7 +19,7 @@
 	<div class="form-group">
 		<label for="date_of_publication" class="col-md-4 control-label">Date Of Publication</label>
 		<div class="col-md-8">
-			<input type="text" name="date_of_publication" value="<?php echo $this->input->post('date_of_publication'); ?>" class="form-control" id="date_of_publication" />
+			<input type="date" name="date_of_publication" value="<?php echo $this->input->post('date_of_publication'); ?>" class="form-control" id="date_of_publication" />
 		</div>
 	</div>
 	<div class="form-group">

@@ -36,7 +36,7 @@ class Faculty_experience extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'emp_id' => $this->input->post('emp_id'),
+				'emp_id' => $_SESSION['emp_id'],
 				'institution_name' => $this->input->post('institution_name'),
 				'university' => $this->input->post('university'),
 				'teaching_hours' => $this->input->post('teaching_hours'),

@@ -29,15 +29,29 @@ class Employees extends CI_Controller{
         $data['heading'] = 'List of Employees';
         $this->load->view('layouts/main',$data);
     }
-    public function getEmployee($id)
+    public function getEmployee($emp_id)
     {
-        $data['faculty_education'] = $this->Faculty_education_model->get_faculty_education($id);
-        $data['faculty_subject'] = $this->Faculty_subject_model->get_faculty_subject($id);
-        $data['faculty_phd'] = $this->Faculty_phd_model->get_faculty_phd($id);
-        $data['faculty_publications'] = $this->Faculty_publication_model->get_faculty_publication($id);
-        $data['faculty_experience'] = $this->Faculty_experience_model->get_faculty_experience($id);
-        $data['_view'] = 'employeesList/getEmployee';
-        $data['heading'] = 'Employee Details';
+        $data['personal_info'] = $this->Personal_info_model->get_info_by_id($emp_id);
+        $data['faculty_subject'] = $this->Faculty_subject_model->get_info_by_id($emp_id);
+        $data['faculty_publications'] = $this->Faculty_publication_model->get_info_by_id($emp_id);
+        $data['faculty_phd'] = $this->Faculty_phd_model->get_info_by_id($emp_id);
+        $data['faculty_experience'] = $this->Faculty_experience_model->get_info_by_id($emp_id);
+        $data['faculty_education'] = $this->Faculty_education_model->get_info_by_id($emp_id);
+        
+        $data['_view1'] = 'personal_info/index';
+        $data['_view2'] = 'faculty_subject/index';
+        $data['_view3'] = 'faculty_publication/index';
+        $data['_view4'] = 'faculty_phd/index';
+        $data['_view5'] = 'faculty_experience/index';
+        $data['_view6'] = 'faculty_education/index';
+        
+       
+        $data['heading1'] = 'personal_info';
+        $data['heading2'] = 'faculty_subject';
+        $data['heading3'] = 'faculty_publications';
+        $data['heading4'] = 'faculty_phd';
+        $data['heading5'] = 'faculty_experience';
+        $data['heading6'] = 'faculty_education';
         $this->load->view('layouts/main',$data);
     }
 }

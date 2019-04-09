@@ -1,4 +1,5 @@
 
+
 <table class="table table-striped table-bordered">
     <tr>
 		<th>ID</th>
@@ -11,7 +12,7 @@
 		<th>PAN</th>
 		<th>Aadhaar</th>
 		<th>JNTU No</th>
-		<th>Actions</th>
+        <th>Actions</th>
     </tr>
 	<?php foreach($personal_info as $p){ ?>
     <tr>
@@ -26,10 +27,22 @@
 		<td><?php echo $p['aadhaar']; ?></td>
 		<td><?php echo $p['JNTU_no']; ?></td>
 		<td>
-            
-            <a href="<?php echo site_url('Employees/getEmployee/'.$p['emp_id']); ?>" class="btn btn-primary btn-xs">View</a>
-            
+            <a href="<?php echo site_url('Employees/getEmployee/'.$p['emp_id']); ?>" class="btn btn-info btn-xs">Details</a> 
+           
         </td>
     </tr>
 	<?php } ?>
 </table>
+
+<div class="row justify-content-center">
+             <div class="col col-lg-6 ">
+                <h2>Add Complete Details of an employee</h2>
+			 </div>
+			 <div class="col col-lg-1">&rarr;</div>
+            <div class="col col-lg-2">
+                <a href="<?php echo site_url('Personal_info/add'); 
+                  $_SESSION['start-adding'] = TRUE ;
+               ?>" name='add_Employee' class="btn btn-success" >Add</a> 
+               
+             </div>     
+	</div> 

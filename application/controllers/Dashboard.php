@@ -45,7 +45,9 @@ function index3($emp_id)
     {
         if($_SESSION['login_type']=="Director")
         {
-        $data['_view'] = 'dashboard';
+        
+        $data['personal_info'] = $this->Personal_info_model->get_all_personal_info();
+        $data['_view'] = 'personal_info/Director_view';
         $data['heading'] = 'Director DashBoard';
         $this->load->view('layouts/main',$data);
         }
