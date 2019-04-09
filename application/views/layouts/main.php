@@ -15,8 +15,9 @@
 	  <header>
 			<nav class="navbar navbar-expand navbar-light bg-dark navbar-dark">
 				<div class="nav navbar-nav mx-auto">
+				<a href="<?php echo site_url('dashboard/index2'); ?>" class="btn btn-success">HOME</a> 
 					<a class="nav-item nav-link active btn btn-outline" role="button" href="<?php echo site_url('Dashboard/'); ?>">Dashboard <span class="sr-only">(current)</span></a>
-					
+					<a href="<?php echo site_url('user/user_logout'); ?>" class="btn btn-success">LogOut</a> 
 				</div>
 			</nav>
 	  </header>
@@ -28,6 +29,9 @@
                                     <?php
                                 } ?>
 		<h3><?php	if(isset($heading))	echo $heading ?></h3>
+		<div class="col col-lg-2">
+                
+             </div>    
 		<?php	if(isset($_view) && $_view)
 			$this->load->view($_view);
 		?></div>

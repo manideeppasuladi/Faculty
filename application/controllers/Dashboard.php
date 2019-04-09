@@ -11,11 +11,34 @@ class Dashboard extends CI_Controller{
         
     }
 
+    function index2()
+    {
+        if($_SESSION['login_type']=="Director")
+        {
+        $data['_view'] = 'dashboard';
+        $data['heading'] = 'Director DashBoard';
+        $this->load->view('layouts/main',$data);
+        }
+        else if($_SESSION['login_type']=="HOD"){
+            
+            
+            $data['_view'] = 'dashboard_HOD';
+            $data['heading'] = 'HOD DashBaord';
+            $this->load->view('layouts/main',$data);
+        }else
+        {
+            
+            $data['_view'] = 'dashboard_Faculty';
+            $data['heading'] = 'Faculty DashBaord';
+            $this->load->view('layouts/main',$data);
+            
+        }
+    }
     function index()
     {
-        $data['_view'] = 'dashboard';
-        $data['heading'] = 'Editing Dashboard';
-        $this->load->view('layouts/main',$data);
+        $data['_view'] = 'Login';
+        
+        $this->load->view('login',$data);
     }
     public function logout(){
         //unset($_SESSION);
