@@ -33,6 +33,7 @@ public function login_view(){
               $this->session->set_userdata('username',$data['password']);
               $this->session->set_userdata('login_type',$data['login_type']);
               $this->session->set_userdata('DEPT',$data['DEPT']);
+              $_SESSION['login_type']=$data['DEPT'];
               $_SESSION['emp_id']=$user_login['user_password'];
 
                 $_SESSION['login_type']=$user_login['login_type'];

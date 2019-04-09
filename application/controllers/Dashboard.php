@@ -15,7 +15,32 @@ class Dashboard extends CI_Controller{
         $this->load->model('Faculty_experience_model');
         $this->load->model('Faculty_education_model');
     }
+function index3($emp_id)
+{$data['personal_info'] = $this->Personal_info_model->get_info_by_id($emp_id);
+    $data['faculty_subject'] = $this->Faculty_subject_model->get_info_by_id($emp_id);
+    $data['faculty_publications'] = $this->Faculty_publication_model->get_info_by_id($emp_id);
+    $data['faculty_phd'] = $this->Faculty_phd_model->get_info_by_id($emp_id);
+    $data['faculty_experience'] = $this->Faculty_experience_model->get_info_by_id($emp_id);
+    $data['faculty_education'] = $this->Faculty_education_model->get_info_by_id($emp_id);
+    $data['_view'] = 'dashboard_Faculty';
+    $data['_view1'] = 'personal_info/faculty_view';
+    $data['_view2'] = 'faculty_subject/faculty_view';
+    $data['_view3'] = 'faculty_publication/faculty_view';
+    $data['_view4'] = 'faculty_phd/faculty_view';
+    $data['_view5'] = 'faculty_experience/faculty_view';
+    $data['_view6'] = 'faculty_education/faculty_view';
+    
+    $data['heading'] = 'Faculty DashBaord';
+    $data['heading1'] = 'personal_info';
+    $data['heading2'] = 'faculty_subject';
+    $data['heading3'] = 'faculty_publications';
+    $data['heading4'] = 'faculty_phd';
+    $data['heading5'] = 'faculty_experience';
+    $data['heading6'] = 'faculty_education';
+   
+    $this->load->view('layouts/main',$data);
 
+}
     function index2()
     {
         if($_SESSION['login_type']=="Director")
@@ -26,13 +51,17 @@ class Dashboard extends CI_Controller{
         }
         else if($_SESSION['login_type']=="HOD"){
             
-            
+            $dept=$_SESSION['DEPT'];
+            $data['personal_info'] = $this->Personal_info_model->get_personal_info_by_dept($dept);
             $data['_view'] = 'dashboard_HOD';
-            $data['heading'] = 'HOD DashBaord';
+            $data['_view1'] = 'personal_info/HOD_view';
+            $data['heading'] = 'HOD DashBoard';
             $this->load->view('layouts/main',$data);
         }else
         {
+            if(!$_SESSION['login_type']=="HOD")
             $emp_id=$_SESSION['emp_id'];
+
             $data['personal_info'] = $this->Personal_info_model->get_info_by_id($emp_id);
             $data['faculty_subject'] = $this->Faculty_subject_model->get_info_by_id($emp_id);
             $data['faculty_publications'] = $this->Faculty_publication_model->get_info_by_id($emp_id);

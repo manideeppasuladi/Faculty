@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 09, 2019 at 11:29 AM
+-- Generation Time: Apr 09, 2019 at 12:14 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -159,14 +159,15 @@ CREATE TABLE IF NOT EXISTS `login` (
   `login_type` varchar(100) NOT NULL,
   `DEPT` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `login_type`, `DEPT`) VALUES
-(3, 'karthik@cvsr.ac.in', 12345, 'Faculty', 'CSE\\');
+(3, 'karthik@cvsr.ac.in', 12345, 'Faculty', 'CSE\\'),
+(5, 'hodcse@cvsr.ac.in', 123, 'HOD', 'CSE');
 
 -- --------------------------------------------------------
 
