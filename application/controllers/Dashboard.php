@@ -59,7 +59,7 @@ function index3($emp_id)
             $this->load->view('layouts/main',$data);
         }else
         {
-            if(!$_SESSION['login_type']=="HOD")
+         
             $emp_id=$_SESSION['emp_id'];
 
             $data['personal_info'] = $this->Personal_info_model->get_info_by_id($emp_id);
