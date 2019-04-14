@@ -12,6 +12,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+  <div class="row"><img style="margin : 1px 1px 1px;float : left;" height="110" width="400" src="https://anurag.edu.in/wp-content/themes/appply/images/logo.png"
+</div>
+</div></br>
+
+            
 	  <header>
 			<nav class="navbar navbar-expand navbar-light bg-dark navbar-dark">
 				<div class="nav navbar-nav mx-auto">
@@ -69,6 +74,18 @@
 			$this->load->view($_view7);
 		?>
 		</div>
+		<div class="alert alert-success center">
+    <center>
+<?php 
+echo "Developed by Anurag Web Club";
+
+?>
+</br>
+<?php 
+echo "Anurag Group of Institutions";
+
+?>
+</center>
 	</main>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

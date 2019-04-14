@@ -36,7 +36,7 @@ class Faculty_publication extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'emp_id' => $this->input->post('emp_id'),
+				'emp_id' => $_SESSION['emp_id'],
 				'date_of_publication' => $this->input->post('date_of_publication'),
 				'validation' => $this->input->post('validation'),
 				'page' => $this->input->post('page'),

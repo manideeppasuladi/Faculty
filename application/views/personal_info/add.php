@@ -6,12 +6,21 @@
 			<input type="text" name="Name" value="<?php echo $this->input->post('Name'); ?>" class="form-control" id="Name" />
 		</div>
 	</div>
+	
 	<div class="form-group">
-		<label for="DEPT" class="col-md-4 control-label">DEPT</label>
-		<div class="col-md-8">
-			<input type="text" name="DEPT" value="<?php echo $this->input->post('DEPT'); ?>" class="form-control" id="DEPT" />
-		</div>
-	</div>
+      <label class="col-md-4 control-label">DEPARTMENT</label>
+	  <div class="col-md-8">
+      <select name="DEPT" class="form-control col-md-4" id="sel1">
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+		<option value="CHEM">CHEMICAL</option>
+        <option value="MECH">MECHANICAL</option>
+        <option value="CIVIL">CIVIL</option>
+		<option value="MBA">MBA</option>
+        <option value="PHARMACY">PHARMACY</option>
+      </select>
+	  </div>
 	<div class="form-group">
 		<label for="emp_id" class="col-md-4 control-label">Emp Id</label>
 		<div class="col-md-8">
@@ -33,7 +42,7 @@
 	<div class="form-group">
 		<label for="date_of_joining" class="col-md-4 control-label">Date Of Joining</label>
 		<div class="col-md-8">
-			<input type="text" name="date_of_joining" value="<?php echo $this->input->post('date_of_joining'); ?>" class="form-control" id="date_of_joining" />
+			<input type="date" name="date_of_joining" value="<?php echo $this->input->post('date_of_joining'); ?>" class="form-control" id="date_of_joining" />
 		</div>
 	</div>
 	<div class="form-group">

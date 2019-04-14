@@ -10,7 +10,7 @@
 				{
 					$selected = ($personal_info['id'] == $this->input->post('emp_id')) ? ' selected="selected"' : "";
 
-					echo '<option value="'.$personal_info['id'].'" '.$selected.'>'.$personal_info['emp_id'].'</option>';
+					echo '<option value="'.$personal_info['emp_id'].'" '.$selected.'>'.$personal_info['emp_id'].'</option>';
 				} 
 				?>
 			</select>
