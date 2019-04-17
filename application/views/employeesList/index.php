@@ -27,7 +27,7 @@
 		<td><?php echo $p['JNTU_no']; ?></td>
 		<td>
             
-            <a href="<?php echo site_url('Employees/getEmployee/'.$p['id']); ?>" class="btn btn-primary btn-xs">View</a>
+            <a href="<?php echo site_url('Employees/getEmployee/'.$p['emp_id']); ?>" class="btn btn-primary btn-xs">View</a>
             
         </td>
     </tr>

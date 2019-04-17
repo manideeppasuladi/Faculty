@@ -9,6 +9,7 @@ class Personal_info extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Personal_info_model');
+        $this->load->model('user_model');
     } 
 
     /*
@@ -35,6 +36,11 @@ class Personal_info extends CI_Controller{
     {   
         
 
+        if(isset($_POST['add_Employee'])){
+            $_SESSION['start-adding'] = TRUE ;
+            redirect('personal_info/add');
+        }
+        
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
@@ -48,11 +54,20 @@ class Personal_info extends CI_Controller{
 				'aadhaar' => $this->input->post('aadhaar'),
 				'JNTU_no' => $this->input->post('JNTU_no'),
             );
-            
+            $_SESSION['emp_id']= $this->input->post('emp_id');
+            $user_login=array(
+      
+                'username'=>$this->input->post('email'),
+                'password'=>$this->input->post('emp_id'),
+                'login_type'=>'Faculty',
+              
+                  );
+                  $this->user_model->register_user($user_login);
             $personal_info_id = $this->Personal_info_model->add_personal_info($params);
             //redirect('personal_info/index');
             if(isset($_SESSION['start-adding']))
             {
+                $_SESSION['empId']=$this->input->post('emp_id');
                 $this->session->set_flashdata('success','Data Stored. Go to next page');
                 redirect('personal_info/add');
             }

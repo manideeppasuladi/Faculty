@@ -38,7 +38,7 @@ class Faculty_phd extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'emp_id' => $this->input->post('emp_id'),
+				'emp_id' =>$_SESSION['emp_id'],
 				'specialisation' => $this->input->post('specialisation'),
 				'year' => $this->input->post('year'),
 				'university_name' => $this->input->post('university_name'),

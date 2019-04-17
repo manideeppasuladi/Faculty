@@ -14,31 +14,69 @@ class Dashboard extends CI_Controller{
         $this->load->model('Faculty_phd_model');
         $this->load->model('Faculty_experience_model');
         $this->load->model('Faculty_education_model');
+        $this->load->model('documents_model');
     }
+function index3($emp_id)
+{
+    
+    $data['personal_info'] = $this->Personal_info_model->get_info_by_id($emp_id);
+    $data['faculty_subject'] = $this->Faculty_subject_model->get_info_by_id($emp_id);
+    $data['faculty_publications'] = $this->Faculty_publication_model->get_info_by_id($emp_id);
+    $data['faculty_phd'] = $this->Faculty_phd_model->get_info_by_id($emp_id);
+    $data['faculty_experience'] = $this->Faculty_experience_model->get_info_by_id($emp_id);
+    $data['faculty_education'] = $this->Faculty_education_model->get_info_by_id($emp_id);
+    $data['_view'] = 'dashboard_Faculty';
+    $data['_view1'] = 'personal_info/faculty_view';
+    $data['_view2'] = 'faculty_subject/faculty_view';
+    $data['_view3'] = 'faculty_publication/faculty_view';
+    $data['_view4'] = 'faculty_phd/faculty_view';
+    $data['_view5'] = 'faculty_experience/faculty_view';
+    $data['_view6'] = 'faculty_education/faculty_view';
+    
+    $data['heading'] = 'Faculty DashBaord';
+    $data['heading1'] = 'personal_info';
+    $data['heading2'] = 'faculty_subject';
+    $data['heading3'] = 'faculty_publications';
+    $data['heading4'] = 'faculty_phd';
+    $data['heading5'] = 'faculty_experience';
+    $data['heading6'] = 'faculty_education';
+   
+    $this->load->view('layouts/main',$data);
 
+}
     function index2()
     {
+        
         if($_SESSION['login_type']=="Director")
         {
-        $data['_view'] = 'dashboard';
+            
+        $data['personal_info'] = $this->Personal_info_model->get_all_personal_info();
+        $data['_view'] = 'personal_info/Director_view';
         $data['heading'] = 'Director DashBoard';
+        $_SESSION['user-logged']= TRUE;
         $this->load->view('layouts/main',$data);
         }
         else if($_SESSION['login_type']=="HOD"){
             
-            
+            $dept=$_SESSION['DEPT'];
+            $data['personal_info'] = $this->Personal_info_model->get_personal_info_by_dept($dept);
             $data['_view'] = 'dashboard_HOD';
-            $data['heading'] = 'HOD DashBaord';
+            $data['_view1'] = 'personal_info/HOD_view';
+            $data['heading'] = 'HOD DashBoard';
+            $_SESSION['user-logged']= TRUE;
             $this->load->view('layouts/main',$data);
         }else
         {
+         
             $emp_id=$_SESSION['emp_id'];
+
             $data['personal_info'] = $this->Personal_info_model->get_info_by_id($emp_id);
             $data['faculty_subject'] = $this->Faculty_subject_model->get_info_by_id($emp_id);
             $data['faculty_publications'] = $this->Faculty_publication_model->get_info_by_id($emp_id);
             $data['faculty_phd'] = $this->Faculty_phd_model->get_info_by_id($emp_id);
             $data['faculty_experience'] = $this->Faculty_experience_model->get_info_by_id($emp_id);
             $data['faculty_education'] = $this->Faculty_education_model->get_info_by_id($emp_id);
+            $data['docs_display']=$this->documents_model->get_info_by_id($emp_id);
             $data['_view'] = 'dashboard_Faculty';
             $data['_view1'] = 'personal_info/faculty_view';
             $data['_view2'] = 'faculty_subject/faculty_view';
@@ -46,6 +84,7 @@ class Dashboard extends CI_Controller{
             $data['_view4'] = 'faculty_phd/faculty_view';
             $data['_view5'] = 'faculty_experience/faculty_view';
             $data['_view6'] = 'faculty_education/faculty_view';
+            $data['_view7'] = 'doc_display';
             
             $data['heading'] = 'Faculty DashBaord';
             $data['heading1'] = 'personal_info';
@@ -54,13 +93,18 @@ class Dashboard extends CI_Controller{
             $data['heading4'] = 'faculty_phd';
             $data['heading5'] = 'faculty_experience';
             $data['heading6'] = 'faculty_education';
-           
+            $_SESSION['user-logged']= TRUE;
             $this->load->view('layouts/main',$data);
             
         }
     }
     function index()
     {
+        if(isset($_SESSION['user-logged']))
+        {
+              redirect('dashboard/index2');
+            
+        }
         $data['_view'] = 'Login';
         
         $this->load->view('login',$data);
@@ -69,8 +113,17 @@ class Dashboard extends CI_Controller{
         //unset($_SESSION);
         
         $this->session->sess_destroy();
-        $data['_view'] = 'dashboard';
-        $data['heading'] = 'Editing Dashboard';
-        $this->load->view('layouts/main',$data);
+        redirect('/', 'refresh');
+    }
+    public function destroy()
+    {
+        $this->session->unset_userdata('start-adding');
+        $this->session->unset_userdata('empId');
+        if(isset($_SESSION['start-adding']))
+        {
+            $_SESSION['start-adding']= FALSE;
+        }
+       
+        redirect('dashboard/index2');
     }
 }

@@ -36,7 +36,7 @@ class Faculty_subject extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'emp_id' => $this->input->post('emp_id'),
+                'emp_id' => $_SESSION['emp_id'],
 				'subject_name' => $this->input->post('subject_name'),
             );
             

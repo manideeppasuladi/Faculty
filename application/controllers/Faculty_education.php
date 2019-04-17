@@ -36,7 +36,7 @@ class Faculty_education extends CI_Controller{
         if(isset($_POST) && count($_POST) > 0)     
         {   
             $params = array(
-				'emp_id' => $this->input->post('emp_id'),
+				'emp_id' => $_SESSION['emp_id'],
 				'Tenth' => $this->input->post('Tenth'),
 				'tenth_year_of_study' => $this->input->post('tenth_year_of_study'),
 				'twelve_standard' => $this->input->post('twelve_standard'),

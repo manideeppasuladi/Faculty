@@ -1,20 +1,34 @@
 <?php echo form_open('faculty_experience/add',array("class"=>"form-horizontal")); ?>
 
-	<div class="form-group">
+<div class="form-group">
 		<label for="emp_id" class="col-md-4 control-label">Personal Info</label>
-		<div class="col-md-8">
-			<select name="emp_id" class="form-control">
-				<option value="">select personal_info</option>
-				<?php 
-				foreach($all_personal_info as $personal_info)
-				{
-					$selected = ($personal_info['id'] == $this->input->post('emp_id')) ? ' selected="selected"' : "";
+		
+		<?php
+			if(isset($_SESSION['empId']))
+			{
+		?>
+			<div class="col-md-8">
+				<input  class="form-control" name="emp_id" type="text" value="<?php echo $_SESSION['empId']?>" readonly="readonly"	/>
+			</div>
+		<?php
+			} else {
+		?>
+				<div class="col-md-8">
+					<select name="emp_id" class="form-control">
+						<option value="">select personal_info</option>
+						<?php 
+						foreach($all_personal_info as $personal_info)
+						{
+							$selected = ($personal_info['id'] == $this->input->post('emp_id')) ? ' selected="selected"' : "";
 
-					echo '<option value="'.$personal_info['id'].'" '.$selected.'>'.$personal_info['emp_id'].'</option>';
-				} 
-				?>
-			</select>
-		</div>
+							echo '<option value="'.$personal_info['id'].'" '.$selected.'>'.$personal_info['emp_id'].'</option>';
+						} 
+						?>
+					</select>
+				</div>
+		<?php
+			}
+		?>
 	</div>
 	<div class="form-group">
 		<label for="institution_name" class="col-md-4 control-label">Institution Name</label>
@@ -49,7 +63,7 @@
 		{ 
 		?>
 			<div class="col-sm-4 col-sm-6 col-lg-4">
-				<a href="<?php echo site_url('Dashboard/logout'); ?>" class="btn btn-primary">Done</a> 
+				<a href="<?php echo site_url('Dashboard/destroy'); ?>" class="btn btn-primary">Done</a> 
 			</div>
 		<?php
 		} 

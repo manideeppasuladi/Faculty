@@ -3,21 +3,42 @@
 <!doctype html>
 <html lang="en">
   <head>
-	<title>Title</title>
+	<title>Faculty</title>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+	<!-- jquery and datatables -->
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
+<script  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>	
+
+</head>
   <body>
+  <div class="row"><img style="margin : 1px 1px 1px;float : left;" height="110" width="400" src="https://anurag.edu.in/wp-content/themes/appply/images/logo.png"
+</div>
+</div></br>
+
+            
 	  <header>
 			<nav class="navbar navbar-expand navbar-light bg-dark navbar-dark">
+<!--				<div class="nav navbar-nav mx-auto">
+				<a href="<?php //echo site_url('dashboard/index2'); ?>" class="btn btn-success">HOME</a> 
+					<a class="nav-item nav-link active btn btn-outline" role="button" href="//<?php echo site_url('dashboard/index2'); ?>">Dashboard <span class="sr-only">(current)</span></a>
+					<a href="<?php //echo site_url('user/user_logout'); ?>" class="btn btn-success">LogOut</a> 
+				</div>
+-->
 				<div class="nav navbar-nav mx-auto">
-				<a href="<?php echo site_url('dashboard/index2'); ?>" class="btn btn-success">HOME</a> 
-					<a class="nav-item nav-link active btn btn-outline" role="button" href="<?php echo site_url('Dashboard/'); ?>">Dashboard <span class="sr-only">(current)</span></a>
-					<a href="<?php echo site_url('user/user_logout'); ?>" class="btn btn-success">LogOut</a> 
+				
+					<a class="nav-item nav-link active btn btn-outline btn-primary" role="button" href="<?php echo site_url('Dashboard/index2'); ?>">Dashboard <span class="sr-only">(current)</span></a>
+				
+				</div>
+				<div class="nav navbar-nav mr-auto">
+				
+				<a href="<?php echo site_url('user/user_logout'); ?>" class="btn btn-success float-right">LogOut</a> 
 				</div>
 			</nav>
 	  </header>
@@ -69,10 +90,23 @@
 			$this->load->view($_view7);
 		?>
 		</div>
+		<div class="alert alert-success center">
+    <center>
+<?php 
+echo "Developed by Anurag Web Club";
+
+?>
+</br>
+<?php 
+echo "Anurag Group of Institutions";
+
+?>
+</center>
 	</main>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
