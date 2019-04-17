@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 09, 2019 at 10:12 AM
+-- Generation Time: Apr 09, 2019 at 12:14 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `faculty_education` (
 --
 
 INSERT INTO `faculty_education` (`id`, `emp_id`, `Tenth`, `tenth_year_of_study`, `twelve_standard`, `twelve_year_of_study`, `degree`, `degree_year_of_study`, `masters`, `masters_year_of_study`, `PHD`) VALUES
-(1, 1, '98.2', 2014, '98', 2016, '89', 2020, '87', 2022, 'No');
+(1, 12345, '98.2', 2014, '98', 2016, '89', 2020, '87', 2022, 'No');
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `faculty_experience` (
 --
 
 INSERT INTO `faculty_experience` (`id`, `emp_id`, `institution_name`, `university`, `teaching_hours`, `place`) VALUES
-(1, 1, 'CVSr', 'JNTU', 100, 'Hyderabad');
+(1, 12345, 'CVSr', 'JNTU', 100, 'Hyderabad');
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `faculty_phd` (
 --
 
 INSERT INTO `faculty_phd` (`id`, `emp_id`, `specialisation`, `year`, `university_name`, `college`) VALUES
-(1, 1, 'ML', 2022, 'KLU', 'CVSR');
+(1, 12345, 'ML', 2022, 'KLU', 'CVSR');
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `faculty_publications` (
 --
 
 INSERT INTO `faculty_publications` (`id`, `emp_id`, `date_of_publication`, `validation`, `page`, `international_name`, `index_name`) VALUES
-(1, 1, '0000-00-00', 'Validation', 'Page', 'International Name', 'Index name');
+(1, 12345, '0000-00-00', 'Validation', 'Page', 'International Name', 'Index name');
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `faculty_subject` (
 --
 
 INSERT INTO `faculty_subject` (`id`, `emp_id`, `subject_name`) VALUES
-(1, 1, 'DWDM');
+(1, 12345, 'DWDM');
 
 -- --------------------------------------------------------
 
@@ -157,18 +157,17 @@ CREATE TABLE IF NOT EXISTS `login` (
   `username` varchar(100) NOT NULL,
   `password` int(11) NOT NULL,
   `login_type` varchar(100) NOT NULL,
+  `DEPT` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id`, `username`, `password`, `login_type`) VALUES
-(1, 'director@cvsr.ac.in', 12345, 'Director'),
-(2, 'hodcse@cvsr.ac.in', 12345, 'HOD'),
-(3, 'karthik@cvsr.ac.in', 12345, 'Faculty'),
-(4, 'mani@cvsr.ac.in', 12345, 'Faculty');
+INSERT INTO `login` (`id`, `username`, `password`, `login_type`, `DEPT`) VALUES
+(3, 'karthik@cvsr.ac.in', 12345, 'Faculty', 'CSE\\'),
+(5, 'hodcse@cvsr.ac.in', 123, 'HOD', 'CSE');
 
 -- --------------------------------------------------------
 
@@ -196,8 +195,7 @@ CREATE TABLE IF NOT EXISTS `personal_info` (
 --
 
 INSERT INTO `personal_info` (`id`, `Name`, `DEPT`, `emp_id`, `email`, `phone_no`, `date_of_joining`, `PAN`, `aadhaar`, `JNTU_no`) VALUES
-(1, 'Sai Karthik', 'CSE', 12345, 'saikarthik952@gmail.com', 2147483647, '0000-00-00', '1234567890', 2147483647, '12345'),
-(2, 'Sai karthik', 'ECE', 12345, 'sai@gmail.com', 2147483647, '0000-00-00', '12312', 2147483647, '7090');
+(1, 'Sai Karthik', 'CSE', 12345, 'saikarthik952@gmail.com', 2147483647, '0000-00-00', '1234567890', 2147483647, '12345');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
